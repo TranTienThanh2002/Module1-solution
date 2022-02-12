@@ -4,16 +4,15 @@
 angular.module("LunchCheck", []).controller("LunchCheckController", LunchCheckController);
   LunchCheckController.$inject=["$scope"];
   function LunchCheckController($scope) {
-    $scope.itemString="";
-    $scope.nbOfItem=0;
-    $scope.resultSrting;
-    $scope.resultOk=null;
+    $scope.itemString = "";
+    $scope.nbOfItems = 0;
+    $scope.resultString;
+    $scope.resultOk = null;
 
-    $scope.checkItems=function() {
-      if($scope.itemString.lenght >0 )
-      {
+    $scope.checkItems = function() {
+      if($scope.itemString.length > 0 ){
         console.log("Items entered: " + $scope.itemString);
-        var itemArray = $scope.itemString.spit(",");
+        var itemArray = $scope.itemString.split(",");
         console.log("Items as array: "+ itemArray);
 
         $scope.resultSrting = checkItemCount(itemArray);
@@ -21,12 +20,12 @@ angular.module("LunchCheck", []).controller("LunchCheckController", LunchCheckCo
       }
       else {
         $scope.resultSrting = "Please enter data first";
-        $scope.resultOk =false;
+        $scope.resultOk= false;
       }
     };
   }
   function checkItemCount(items){
-    var itemCount = items.lenght;
+    var itemCount = items.length;
     console.log("Number of items entered: " + itemCount );
     if(itemCount < 4)
       return "Enjoy!";
