@@ -13,9 +13,9 @@
     }
     input.ok { border-color: black; }
     input.ok { border-color: green; }
-    input.notOk { border-color: red; }
+    input.notOK { border-color: red; }
     output.ok { color: green; border-color: green; }
-    output.notOk { color: red; border-color: red; }
+    output.notOK { color: red; border-color: red; }
     </style>
     <script type="text/javascript" src="angular.min.js">
     </script>
@@ -26,7 +26,7 @@
        <h1>Lunch Checker</h1>
 
            <div class="form-group">
-               <input id="lunch-menu" type="text" ng-model="itemString" ng-class="{ok: resultOk, notOK: result == false}"
+               <input id="lunch-menu" type="text" ng-model="itemString" ng-class="{ok: resultOk, notOK: resultOk == false}"
                placeholder="list comma separated dishes you usually have for lunch"
                class="form-control">
            </div>
